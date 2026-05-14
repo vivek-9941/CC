@@ -1,0 +1,2 @@
+sudo rm -rf blog_mern_app/
+this is to be used to remove previous folders

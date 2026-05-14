@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: #fff;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #fcfcfc;
+    color: #7f8c8d;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    width: auto;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.edit-btn {
+    width: auto;
+    padding: 6px 12px;
+    margin-right: 5px;
+    background-color: #f39c12;
+    font-size: 0.8rem;
+}
+
+.edit-btn:hover {
+    background-color: #d68910;
+}
+
+/* --- VALIDATION / FEEDBACK --- */
+.banner {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+}
+.banner-error {
+  background: #fdecea;
+  color: #b71c1c;
+  border-color: #f5c2c0;
+}
+.banner-success {
+  background: #e7f6ec;
+  color: #1b5e20;
+  border-color: #bfe0c7;
+}
+
+.input-error {
+  border-color: #e74c3c !important;
+  background: #fff7f6;
+}
+.field-error {
+  color: #c0392b;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.form-actions button { width: auto; min-width: 160px; }
+
+button:disabled { opacity: 0.65; cursor: not-allowed; }

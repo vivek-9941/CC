@@ -1,0 +1,65 @@
+ssh -i LP2_key.pem azureuser@20.193.248.78
+The authenticity of host '20.193.248.78 (20.193.248.78)' can't be established.
+ECDSA key fingerprint is SHA256:Y/OITaPwnPT6HX3/BAcy2f9JaHG8whDjhupxUfc046w.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '20.193.248.78' (ECDSA) to the list of known hosts.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0777 for 'LP2_key.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "LP2_key.pem": bad permissions
+azureuser@20.193.248.78: Permission denied (publickey).
+
+what to do for windows and linux:
+
+  ✅ On Linux / macOS
+
+Run this in the same directory as your key:
+
+chmod 400 LP2_key.pem
+
+or (also acceptable):
+
+chmod 600 LP2_key.pem
+
+Then retry:
+
+ssh -i LP2_key.pem azureuser@20.193.248.78
+
+  ✅ On Windows
+👉 Option 1: Using Git Bash / WSL (recommended)
+
+Run the same command:
+
+chmod 400 LP2_key.pem
+👉 Option 2: Using PowerShell
+
+Windows uses ACLs instead of chmod, so do this:
+
+icacls LP2_key.pem /inheritance:r
+icacls LP2_key.pem /grant:r "$($env:USERNAME):R"
+
+This:
+
+Removes inherited permissions
+Gives only your user read access
+
+  
+
+WSL
+
+🔥 Fix (best solution): Move the key to WSL’s Linux filesystem
+
+Do this:
+
+cp LP2_key.pem ~/
+cd ~
+chmod 400 LP2_key.pem
+
+Then connect:
+
+ssh -i ~/LP2_key.pem azureuser@20.193.248.78
+
+✅ This works because /home/... in WSL respects real Linux permissions.
